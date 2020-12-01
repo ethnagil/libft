@@ -6,7 +6,7 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:43:18 by egillesp          #+#    #+#             */
-/*   Updated: 2020/11/26 12:04:11 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 16:13:22 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*s2;
 
 	len = ft_strlen(s1) - 1;
-	if ((s2 = (char *)malloc(sizeof(char) * (len + 1))) != 0)
+	if ((s2 = (char *)malloc(sizeof(char) * (len + 2))) != 0)
 	{
 		i = 0;
 		while ((s1[i]) && (ft_trim(s1[i], set)))
@@ -48,7 +48,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 			i++;
 			j++;
 		}
-		s2[i] = '\0';
+		s2[j] = 0;
 		return (s2);
 	}
 	return (0);

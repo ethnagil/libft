@@ -6,12 +6,11 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 13:24:47 by egillesp          #+#    #+#             */
-/*   Updated: 2020/11/27 10:36:22 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 17:20:07 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int		ft_cut(char c1, char c)
 {
@@ -26,7 +25,7 @@ int		ft_nblines(char const *s, char c)
 	int i;
 	int nblines;
 
-	nblines = 0;
+	nblines = 1;
 	i = 0;
 	while (s[i])
 	{
@@ -46,7 +45,7 @@ void	ft_cutstr(int *i, int *j, char const *s, char c)
 
 	i2 = *i;
 	j2 = 0;
-	while (ft_cut(s[i2], c) != 1)
+	while ((s[i2]) && (ft_cut(s[i2], c) != 1))
 	{
 		j2++;
 		i2++;
@@ -63,7 +62,7 @@ char	**ft_split(char const *s, char c)
 	int		j;
 
 	lines = ft_nblines(s, c);
-	if ((ss = (char **)malloc(sizeof(char *) * (lines + 2))) != 0)
+	if ((ss = (char **)malloc(sizeof(char *) * (lines + 5))) != 0)
 	{
 		i = 0;
 		j = 0;
@@ -73,12 +72,12 @@ char	**ft_split(char const *s, char c)
 			ft_cutstr(&i, &j, s, c);
 			if (j > 0)
 			{
-				ss[lines] = ft_substr((char const *)s, i - j, j);
-				lines++;
+				ss[lines++] = ft_substr((char const *)s, i - j, j);
 			}
-			i++;
+			if (s[i])
+				i++;
 		}
-		ss[lines] = ft_calloc(10, (sizeof(char)));
+		ss[lines] = 0;
 		return (ss);
 	}
 	return (0);

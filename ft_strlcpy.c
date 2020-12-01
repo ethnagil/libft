@@ -6,26 +6,28 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 15:50:08 by egillesp          #+#    #+#             */
-/*   Updated: 2020/11/24 16:37:02 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 15:04:09 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
-	if (size == 0)
+	if (!dst || !src)
 		return (0);
 	i = 0;
-	while (src[i])
+	if (size > 0)
 	{
-		if (i < size - 1)
+		while ((src[i]) && (size > 1))
+		{
 			dst[i] = src[i];
-		else
-			dst[i] = '\0';
-		i++;
+			i++;
+			size--;
+		}
+		dst[i] = '\0';
 	}
-	return (i);
+	return (ft_strlen(src));
 }

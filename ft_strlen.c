@@ -6,11 +6,11 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 16:38:24 by egillesp          #+#    #+#             */
-/*   Updated: 2020/11/24 12:12:57 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 17:37:51 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {

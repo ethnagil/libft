@@ -6,7 +6,7 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 14:18:13 by egillesp          #+#    #+#             */
-/*   Updated: 2020/11/27 15:19:29 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/11/30 18:50:15 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	if ((result = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))) != 0)
 	{
-		ft_strlcpy(result, s, ft_strlen(s));
+		ft_strlcpy(result, s, ft_strlen(s) + 1);
 		while (result[i])
 		{
 			result[i] = (*f)(i, result[i]);

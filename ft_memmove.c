@@ -6,11 +6,11 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:49:19 by egillesp          #+#    #+#             */
-/*   Updated: 2020/11/24 14:58:09 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 17:37:09 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

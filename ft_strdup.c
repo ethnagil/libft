@@ -6,7 +6,7 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 16:40:10 by egillesp          #+#    #+#             */
-/*   Updated: 2020/11/26 13:23:54 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 11:37:05 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(char *src)
 
 	strlen = ft_strlen(src);
 	if ((src2 = (char *)malloc(sizeof(char) * (strlen + 1))) == 0)
-		return (0);
+		return (NULL);
 	i = ft_strlcpy(src2, src, strlen + 1);
 	return (src2);
 }

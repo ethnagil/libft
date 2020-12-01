@@ -6,11 +6,11 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 17:24:29 by egillesp          #+#    #+#             */
-/*   Updated: 2020/11/27 14:16:00 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 17:35:02 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int		ft_convertnbr(long int nbr, char *alpha, int sign)
 {

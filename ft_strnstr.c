@@ -6,11 +6,11 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 10:17:11 by egillesp          #+#    #+#             */
-/*   Updated: 2020/11/27 16:44:57 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 17:38:39 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *hayst, const char *need, size_t len)
 {
