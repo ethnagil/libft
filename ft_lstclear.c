@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 16:26:09 by egillesp          #+#    #+#             */
-/*   Updated: 2020/12/03 10:44:09 by egillesp         ###   ########lyon.fr   */
+/*   Created: 2020/12/02 17:14:12 by egillesp          #+#    #+#             */
+/*   Updated: 2020/12/03 11:42:27 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t			i;
-	unsigned char	*strdest;
-	unsigned char	*strsrc;
+	t_list	*old_elem;
 
-	strdest = (unsigned char*)dest;
-	strsrc = (unsigned char*)src;
-	i = 0;
-	while (i < n)
+	if (!del)
+		return ;
+	while (*lst)
 	{
-		strdest[i] = strsrc[i];
-		if (strsrc[i] == (unsigned char)c)
-			return (strdest + i + 1);
-		i++;
+		del((*lst)->content);
+		old_elem = *lst;
+		*lst = old_elem->next;
+		free(old_elem);
 	}
-	return (NULL);
+	*lst = NULL;
 }

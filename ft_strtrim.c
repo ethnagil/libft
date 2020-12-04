@@ -6,7 +6,7 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:43:18 by egillesp          #+#    #+#             */
-/*   Updated: 2020/12/01 16:13:22 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 14:19:56 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		j;
 	char	*s2;
 
-	len = ft_strlen(s1) - 1;
-	if ((s2 = (char *)malloc(sizeof(char) * (len + 2))) != 0)
+	len = ft_strlen(s1);
+	i = 0;
+	while ((s1[i]) && (ft_trim(s1[i], set)))
+		i++;
+	while (s1[i] && (len > 0) && (ft_trim(s1[len - 1], set)))
+		len--;
+	if ((s2 = (char *)malloc(sizeof(char) * ((len - i) + 1))) != 0)
 	{
-		i = 0;
-		while ((s1[i]) && (ft_trim(s1[i], set)))
-			i++;
-		while ((len >= 0) && (ft_trim(s1[len], set)))
-			len--;
 		j = 0;
-		while (i <= len)
+		while (i < len)
 		{
 			s2[j] = s1[i];
 			i++;

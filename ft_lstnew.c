@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 16:26:09 by egillesp          #+#    #+#             */
-/*   Updated: 2020/12/03 10:44:09 by egillesp         ###   ########lyon.fr   */
+/*   Created: 2020/12/02 10:42:16 by egillesp          #+#    #+#             */
+/*   Updated: 2020/12/02 12:46:17 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	size_t			i;
-	unsigned char	*strdest;
-	unsigned char	*strsrc;
+	t_list	*lstelem;
 
-	strdest = (unsigned char*)dest;
-	strsrc = (unsigned char*)src;
-	i = 0;
-	while (i < n)
+	if ((lstelem = malloc(sizeof(t_list))) != 0)
 	{
-		strdest[i] = strsrc[i];
-		if (strsrc[i] == (unsigned char)c)
-			return (strdest + i + 1);
-		i++;
+		lstelem->content = content;
+		lstelem->next = 0;
+		return (lstelem);
 	}
-	return (NULL);
+	return (0);
 }

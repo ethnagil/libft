@@ -6,11 +6,11 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:45:05 by egillesp          #+#    #+#             */
-/*   Updated: 2020/11/24 14:48:48 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/02 10:13:53 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

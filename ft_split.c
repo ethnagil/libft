@@ -6,7 +6,7 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 13:24:47 by egillesp          #+#    #+#             */
-/*   Updated: 2020/12/01 17:20:07 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 19:34:54 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,16 @@ int		ft_nblines(char const *s, char c)
 	int i;
 	int nblines;
 
-	nblines = 1;
+	nblines = 0;
 	i = 0;
 	while (s[i])
 	{
-		if (ft_cut(s[i], c))
-		{
+		while (s[i] == c)
+			i++;
+		if (s[i])
 			nblines++;
-		}
-		i++;
+		while (s[i] && (s[i] != c))
+			i++;
 	}
 	return (nblines);
 }

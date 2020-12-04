@@ -6,7 +6,7 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 15:54:42 by egillesp          #+#    #+#             */
-/*   Updated: 2020/12/01 17:34:35 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/03 09:42:28 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t count, size_t size)
 	if ((str = (char *)malloc(size * (count))) != 0)
 	{
 		i = 0;
-		while (i < count)
+		while (i < count * size)
 		{
 			str[i] = 0;
 			i++;
