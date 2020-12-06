@@ -54,6 +54,7 @@ char	*ft_itoa(int n)
 {
 	char		*alpha;
 	int		len;
+	int		i;
 
 	len = ft_intlen((long int)n);
 	if ((alpha = (char *)malloc(sizeof(char) * len)) != 0)
