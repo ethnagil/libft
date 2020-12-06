@@ -15,8 +15,14 @@
 int		ft_intlen(long int n2)
 {
 	int	i;
-
-	i = 1;
+	
+	if (n2 < 0)
+	{
+		i = 2;
+		n2 = n2 * -1;
+	}
+	else
+		i = 1;
 	while ((n2) > 9)
 	{
 		n2 = n2 / 10;
@@ -25,19 +31,20 @@ int		ft_intlen(long int n2)
 	return (i);
 }
 
-int		ft_convertnbr(long int nbr, char *alpha, int sign)
+int		ft_convertnbr(long int nbr, char *alpha)
 {
 	int i;
 
-	if (sign < 0)
+	if (nbr < 0)
 	{
 		i = 1;
 		alpha[0] = '-';
+		nbr = nbr * -1;
 	}
 	else
 		i = 0;
 	if (nbr > 9)
-		i = ft_convertnbr(nbr / 10, alpha, sign);
+		i = ft_convertnbr(nbr / 10, alpha);
 	alpha[i] = (nbr % 10) + 48;
 	i++;
 	return (i);
@@ -46,18 +53,12 @@ int		ft_convertnbr(long int nbr, char *alpha, int sign)
 char	*ft_itoa(int n)
 {
 	char		*alpha;
-	long int	n1;
-	int			i;
-	long int	sign;
+	int		len;
 
-	if (n < 0)
-		sign = -1;
-	else
-		sign = 1;
-	n1 = n * sign;
-	if ((alpha = (char *)malloc(sizeof(char) * ft_intlen(n1))) != 0)
+	len = ft_intlen((long int)n);
+	if ((alpha = (char *)malloc(sizeof(char) * len)) != 0)
 	{
-		i = ft_convertnbr(n1, alpha, sign);
+		i = ft_convertnbr((long int)n, alpha);
 		alpha[i] = '\0';
 		return (alpha);
 	}
