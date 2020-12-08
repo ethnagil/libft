@@ -6,7 +6,7 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 14:01:01 by egillesp          #+#    #+#             */
-/*   Updated: 2020/12/02 18:54:43 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/07 10:31:10 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (!lst)
 		return ;
-	del(lst);
+	del(lst->content);
+	free(lst);
 }

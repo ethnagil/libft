@@ -6,13 +6,32 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 17:24:29 by egillesp          #+#    #+#             */
-/*   Updated: 2020/12/01 17:35:02 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/07 11:31:49 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_convertnbr(long int nbr, char *alpha, int sign)
+int		ft_intlen(long int n2)
+{
+	int	i;
+
+	if (n2 < 0)
+	{
+		i = 2;
+		n2 = n2 * -1;
+	}
+	else
+		i = 1;
+	while ((n2) > 9)
+	{
+		n2 = n2 / 10;
+		i++;
+	}
+	return (i);
+}
+
+int		ft_convertnbr(long int nbr, char *alpha, long int sign)
 {
 	int i;
 
@@ -33,18 +52,18 @@ int		ft_convertnbr(long int nbr, char *alpha, int sign)
 char	*ft_itoa(int n)
 {
 	char		*alpha;
-	long int	n1;
+	int			len;
 	int			i;
 	long int	sign;
 
-	if ((alpha = (char *)malloc(sizeof(char) * 12)) != 0)
+	len = ft_intlen((long int)n);
+	if ((alpha = (char *)malloc(sizeof(char) * (len + 1))) != 0)
 	{
 		if (n < 0)
 			sign = -1;
 		else
 			sign = 1;
-		n1 = n * sign;
-		i = ft_convertnbr(n1, alpha, sign);
+		i = ft_convertnbr((long int)n * sign, alpha, sign);
 		alpha[i] = '\0';
 		return (alpha);
 	}

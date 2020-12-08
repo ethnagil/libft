@@ -6,7 +6,7 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:23:09 by egillesp          #+#    #+#             */
-/*   Updated: 2020/12/03 10:20:40 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/07 11:59:21 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*strdest;
 	char	*strsrc;
 
-	if (dest == NULL || src == NULL)
+	if (!dest && !src)
 		return (0);
 	strdest = (char*)dest;
 	strsrc = (char*)src;

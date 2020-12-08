@@ -6,7 +6,7 @@
 /*   By: egillesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 13:24:47 by egillesp          #+#    #+#             */
-/*   Updated: 2020/12/04 19:34:54 by egillesp         ###   ########lyon.fr   */
+/*   Updated: 2020/12/07 10:39:49 by egillesp         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	**ft_split(char const *s, char c)
 	int		j;
 
 	lines = ft_nblines(s, c);
-	if ((ss = (char **)malloc(sizeof(char *) * (lines + 5))) != 0)
+	if ((ss = (char **)malloc(sizeof(char *) * (lines + 1))) != 0)
 	{
 		i = 0;
 		j = 0;
